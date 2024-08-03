@@ -60,6 +60,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 		flag1++;
 		if (flag1==1){
 			HAL_UART_Transmit(&huart2,"l1_active\r\n",11,10);
+
+		}
+		else if (flag1 ==2 ){
+			flag1 = 0;
+			HAL_UART_Transmit(&huart2,"l1_reset\r\n",10,10);
+
+
 		}
 	}
 
